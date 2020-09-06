@@ -1,0 +1,46 @@
+id,description,location,total_blurts,avg_sentiment
+1,shoes,Washington,16,-1.0000
+1,shoes,Florida,10,-1.0000
+1,shoes,Pennsylvania,22,-1.0000
+1,shoes,Wyoming,22,-1.0000
+1,shoes,Michigan,10,-1.0000
+1,shoes,Masachussets,20,-1.0000
+1,shoes,Texas,8,-1.0000
+1,shoes,Illinois,12,-1.0000
+1,shoes,Utah,22,-1.0000
+1,shoes,Nevada,10,-1.0000
+1,shoes,Oregon,28,-1.0000
+1,shoes,California,22,-1.0000
+1,shoes,"Ney York",14,-1.0000
+1,shoes,Hawaii,12,-1.0000
+1,shoes,Colarado,6,-1.0000
+5,caps,Washington,8,-1.0000
+5,caps,Florida,5,-1.0000
+5,caps,Pennsylvania,11,-1.0000
+5,caps,Wyoming,11,-1.0000
+5,caps,Michigan,5,-1.0000
+5,caps,Masachussets,10,-1.0000
+5,caps,Texas,4,-1.0000
+5,caps,Illinois,6,-1.0000
+5,caps,Utah,11,-1.0000
+5,caps,Nevada,5,-1.0000
+5,caps,Oregon,14,-1.0000
+5,caps,California,11,-1.0000
+5,caps,"Ney York",7,-1.0000
+5,caps,Hawaii,6,-1.0000
+5,caps,Colarado,3,-1.0000
+8,CDs,Texas,9,-1.0000
+8,CDs,Colarado,5,-1.0000
+8,CDs,Hawaii,16,-1.0000
+8,CDs,California,13,-1.0000
+8,CDs,Pennsylvania,19,-1.0000
+8,CDs,Illinois,13,-1.0000
+8,CDs,Michigan,13,-1.0000
+8,CDs,Utah,16,-1.0000
+8,CDs,Washington,15,-1.0000
+8,CDs,Florida,7,-1.0000
+8,CDs,Oregon,17,-1.0000
+8,CDs,Nevada,8,-1.0000
+8,CDs,Wyoming,17,-1.0000
+8,CDs,Masachussets,14,-1.0000
+8,CDs,"Ney York",12,-1.0000

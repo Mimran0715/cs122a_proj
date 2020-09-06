@@ -1,0 +1,75 @@
+# query 1
+SELECT t.id, t.description , count(*)
+FROM blurt_analysis a, topic t, blurt b
+WHERE a.blurtid = b.blurtid
+	AND a.topicid = t.id
+GROUP BY t.id
+ORDER BY t.id;
+
+#query 2
+SELECT u.name, count(*)
+FROM celebrity c, follow f, user u
+WHERE c.email = f.followee
+	AND u.email = c.email
+GROUP BY u.email;
+ 
+ #query 3
+SELECT u.name, count(*)
+FROM celebrity c, user u, blurt b
+WHERE c.email = b.email AND u.email = c.email
+GROUP BY u.email
+ORDER BY u.email DESC;
+
+#query 4
+SELECT DISTINCT u.name
+FROM celebrity c, user u, follow f
+WHERE c.email = u.email
+	AND c.email = f.follower;
+    
+#query 5
+SELECT v.vendor, amb.email, count(*)
+FROM vendor v, vendor_ambassador amb, follow f
+WHERE v.id = amb.vendorid 
+        AND f.followee = amb.email
+GROUP BY v.vendor, amb.email;
+
+#query 6
+SELECT v.vendor, count(*) as advertisement_gap
+FROM blurt_analysis a, vendor v, advertisement ad, vendor_topics top, user_ad u
+WHERE v.id = top.vendorid 
+       AND a.topicid = top.topicid
+       AND ad.id != u.adid
+       AND ad.vendorid = v.id 
+GROUP BY v.vendor
+ORDER BY advertisement_gap DESC;
+
+#query 7
+SELECT u1.name, u2blurts.name
+FROM (SELECT u2.name, a.topic_id, u2.email
+             FROM user u2, blurt_analysis a
+             WHERE u2.email = a.email) u2blurts, blurt_analysis ana, follow f, user u1
+WHERE u1.email = ana.email AND u1.email != f.follower AND u2blurts.email != f.followee AND u2blurts.topicid = ana.topicid
+ORDER BY u1.name, u2.name;
+
+#query 8
+SELECT atoB.email, btoC.email, uC.email
+FROM (SELECT uA.email 
+	  FROM user uA, user uB, follow f
+      WHERE uA.email = f.follower AND uB.email = f.followee) atoB, 
+      (SELECT uB.email
+      FROM user uB, user uC, follow f
+      WHERE uB.email = f.follower AND uC.email = f.followee) btoC,
+      user uC, follow f
+WHERE atoB.email != f.follower AND uC.email = f.followee
+ORDER BY atoB.email, btoC.email, uC.email
+
+     
+#query 9
+SELECT t.id, t.description, b.location, count(b.blurtid) as total_blurts, avg(a.sentiment) as avg_sentiment
+FROM topic t, blurt b, blurt_analysis a
+WHERE t.id = a.topicid
+      AND a.blurtid = b.blurtid
+GROUP BY t.id, b.location
+HAVING avg_sentiment < 0;
+
+
